@@ -1,0 +1,35 @@
+@import model.BestGroupPrice
+@import model.PromotionCombo
+@(bestGroupPrices: Seq[BestGroupPrice], 
+  promotionCombo1: Seq[PromotionCombo],
+  promotionCombo2: Seq[PromotionCombo],
+  promotionCombo3: Seq[PromotionCombo])
+
+@main("TST Programming Exercise") {
+  <h1>Andres Jaimes - Programming Exercise</h1>
+  <section>
+    <h2>Problem 1</h2>
+    <p>Output processed by <code>controllers.HomeController</code>, and <code>services.GroupPriceServiceImpl</code>.</p>
+    <p><strong>Output</strong> - Best Cabin Prices:</p>
+    <ul>@for(bgp <- bestGroupPrices) {
+      <li>@bgp.toString</li> 
+    }</ul>
+  </section>
+
+  <section>
+    <h2>Problem 2</h2>
+    <p>Output processed by <code>controllers.HomeController</code>, and <code>services.PromotionServiceImpl</code>.</p>
+    <p><strong>Output</strong> - All promotion combinations:</p>
+    <ul>@for(pc <- promotionCombo1) {
+      <li>@pc.toString</li>
+    }</ul>
+    <p><strong>Output</strong> - Promotion combinations for "P1":</p>
+    <ul>@for(pc <- promotionCombo2) {
+      <li>@pc.toString</li>
+    }</ul>
+    <p><strong>Output</strong> - Promotion combinations for "P3":</p>
+    <ul>@for(pc <- promotionCombo3) {
+      <li>@pc.toString</li>
+    }</ul>
+  </section>
+}
